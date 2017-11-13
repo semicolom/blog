@@ -2,4 +2,5 @@ from django_extensions.db.models import TimeStampedModel, TitleSlugDescriptionMo
 
 
 class Entry(TimeStampedModel, TitleSlugDescriptionModel):
-    pass
+    def __str__(self):
+        return '{}'.format(self.title)
