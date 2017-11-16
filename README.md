@@ -25,3 +25,7 @@ Update packages: `make requirements`. Creates a requirements.txt file with the l
 `make makemigrations` Will execute a makemigrations with development settings.
 
 `make migrate` Will execute a migrate with development settings.
+
+## Template theme
+
+https://github.com/BlackrockDigital/startbootstrap-clean-blog
