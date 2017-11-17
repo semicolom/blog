@@ -1,7 +1,7 @@
 from django.views.generic.list import ListView
 
-from .models import Entry
+from .models import Post
 
 
-class EntryListView(ListView):
-    model = Entry
+class PostListView(ListView):
+    model = Post

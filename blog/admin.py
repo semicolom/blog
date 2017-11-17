@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from .models import Entry
+from .models import Post
 
 
-@admin.register(Entry)
-class EntryAdmin(admin.ModelAdmin):
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'created',
@@ -17,5 +17,6 @@ class EntryAdmin(admin.ModelAdmin):
 
     search_fields = [
         'title',
-        'description'
+        'subtitle',
+        'body'
     ]
