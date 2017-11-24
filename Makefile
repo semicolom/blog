@@ -51,3 +51,6 @@ makemigrations: virtualenv
 
 migrate: virtualenv
 	$(PYTHON) src/manage.py migrate --settings=settings.dev
+
+collectstatic: virtualenv
+	$(PYTHON) src/manage.py collectstatic -l --settings=settings.dev
