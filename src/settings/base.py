@@ -70,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.context_processors.site_info',
             ],
         },
     },
@@ -130,3 +131,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+
+# Site constants
+SITE_INFO = {
+    'AUTHOR_NAME': "Toni Colom",
+    'SITE_NAME': "Boolbasaur",
+    'GITHUB_URL': "https://github.com/tcolom",
+}
