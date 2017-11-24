@@ -31,19 +31,19 @@ virtualenv: virtualenv_base
 install: requirements virtualenv
 
 isort: virtualenv
-	isort -rc -y
+	isort -rc -y src/
 
 test: virtualenv
-	isort -rc -c
-	flake8
-	coverage run --source='.' manage.py test --settings=settings.dev
+	isort -rc -c src/
+	flake8 src/
+	coverage run --source='.' src/manage.py test --settings=settings.dev
 	coverage report
 
 run: virtualenv
-	$(PYTHON) manage.py runserver --settings=settings.dev
+	$(PYTHON) src/manage.py runserver --settings=settings.dev
 
 makemigrations: virtualenv
-	$(PYTHON) manage.py makemigrations --settings=settings.dev
+	$(PYTHON) src/manage.py makemigrations --settings=settings.dev
 
 migrate: virtualenv
-	$(PYTHON) manage.py migrate --settings=settings.dev
+	$(PYTHON) src/manage.py migrate --settings=settings.dev
