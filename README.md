@@ -4,6 +4,16 @@
 
 Run `make install`
 
+Create a PostgreSQL database
+```sh
+sudo su - postgres
+psql
+CREATE DATABASE blog;
+CREATE USER blog WITH PASSWORD 'blog';
+GRANT ALL PRIVILEGES ON DATABASE blog TO blog;
+ALTER USER blog CREATEDB;
+```
+
 ## Run tests
 
 Run `make tests`. It will do isort-check, lint and django tests.
