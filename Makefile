@@ -40,7 +40,7 @@ isort: virtualenv
 test: virtualenv
 	$(ISORT) -rc -c src/
 	$(FLAKE8) src/
-	$(COVERAGE) run --source='src/' src/manage.py test --settings=settings.dev
+	$(COVERAGE) run --source='src/' src/manage.py test src/ --settings=settings.dev
 	$(COVERAGE) report
 
 run: virtualenv
