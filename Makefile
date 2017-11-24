@@ -1,6 +1,10 @@
-PIP=`. venv/bin/activate; which pip`
-TMP_PIP=`. temp_venv/bin/activate; which pip`
-PYTHON=`. venv/bin/activate; which python`
+PIP="venv/bin/pip"
+TMP_PIP="temp_venv/bin/pip"
+PYTHON="venv/bin/python"
+ISORT="venv/bin/isort"
+FLAKE8="venv/bin/flake8"
+COVERAGE="venv/bin/coverage"
+
 REQUIREMENTS:=requirements/requirements.txt
 REQUIREMENTS_BASE:=requirements/base.txt
 REQUIREMENTS_TEST:=requirements/test.txt
@@ -31,13 +35,13 @@ virtualenv: virtualenv_base
 install: requirements virtualenv
 
 isort: virtualenv
-	isort -rc -y src/
+	$(ISORT) -rc -y src/
 
 test: virtualenv
-	isort -rc -c src/
-	flake8 src/
-	coverage run --source='.' src/manage.py test --settings=settings.dev
-	coverage report
+	$(ISORT) -rc -c src/
+	$(FLAKE8) src/
+	$(COVERAGE) run --source='src/' src/manage.py test --settings=settings.dev
+	$(COVERAGE) report
 
 run: virtualenv
 	$(PYTHON) src/manage.py runserver --settings=settings.dev
