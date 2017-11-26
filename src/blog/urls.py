@@ -1,7 +1,8 @@
 from django.conf.urls import url
 
-from .views import PostDetailView
+from . import views
 
 urlpatterns = [
-    url(r'^(?P<slug>[\w-]+)/$', PostDetailView.as_view(), name='detail'),
+    url(r'^$', views.PostListView.as_view(), name='list'),
+    url(r'^(?P<slug>[\w-]+)/$', views.PostDetailView.as_view(), name='detail'),
 ]

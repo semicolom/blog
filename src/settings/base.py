@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
     # Local
+    'main.apps.MainConfig',
     'blog.apps.BlogConfig',
 
     # Django
@@ -56,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [
     {
