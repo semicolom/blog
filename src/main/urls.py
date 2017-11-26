@@ -3,6 +3,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from blog import urls as blog_urls
+
 from . import views
 
 urlpatterns = [

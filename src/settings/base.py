@@ -62,9 +62,7 @@ ROOT_URLCONF = 'main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,6 +136,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # Site constants
 SITE_INFO = {
     'AUTHOR_NAME': "Toni Colom",
-    'SITE_NAME': "Boolbasaur",
+    'SITE_NAME': "bool(basaur)",
     'GITHUB_URL': "https://github.com/tcolom",
 }

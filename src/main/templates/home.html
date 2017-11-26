@@ -1,36 +1,24 @@
 {% extends "base.html" %}
 {% load humanize static %}
 
-{% block content %}
-    {# Page Header #}
-    <header class="masthead" style="background-image: url('{% static "img/home-bg.jpg" %}')">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="site-heading">
-                        <h1>Clean Blog</h1>
-                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+{% block title %}Home Page title{% endblock title %}
+{% block description %}Home description{% endblock description %}
+{% block h1 %}Home Page H1{% endblock h1 %}
+{% block h2 %}Home Page H2{% endblock h2 %}
 
-    {# Post List #}
+{% block content %}
+    {# Last Post #}
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                {% for post in post_list %}
-                    <div class="post-preview">
-                        <a href="{% url 'blog:detail' post.slug %}">
-                            <h2 class="post-title">{{ post.title }}</h2>
-                            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-                        </a>
-                        <p class="post-meta">Posted {{ post.created | naturalday }}</p>
-                    </div>
-                    <hr>
-                {% endfor %}
+                <div class="post-preview">
+                    <a href="{% url 'blog:detail' last_post.slug %}">
+                        <h2 class="post-title">{{ last_post.title }}</h2>
+                        <h3 class="post-subtitle">{{ last_post.subtitle }}</h3>
+                    </a>
+                    <p class="post-meta">Posted {{ last_post.created | naturalday }}</p>
+                </div>
+                <hr>
             </div>
         </div>
     </div>

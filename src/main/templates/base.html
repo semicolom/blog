@@ -5,10 +5,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
+        <meta name="description" content="{% block description %}{% endblock description %}">
         <meta name="author" content="{{ AUTHOR_NAME }}">
 
-        <title>Clean Blog - Start Bootstrap Theme</title>
+        <title>{% block title %}{% endblock title %}</title>
 
         {# Bootstrap core CSS #}
         <link href="{% static "vendor/bootstrap/css/bootstrap.min.css"  %}" rel="stylesheet">
@@ -44,8 +44,25 @@
             </div>
         </nav>
 
-        {% block content %}{% endblock content %}
+        {# Page Header #}
+        {% block page_header %}
+            <header class="masthead" style="background-image: url('{% static "img/home-bg.jpg" %}')">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-10 mx-auto">
+                            <div class="site-heading">
+                                <h1>{% block h1 %}{% endblock h1 %}</h1>
+                                <h2 class="subheading">{% block h2 %}{% endblock h2 %}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        {% endblock page_header %}
 
+        {# Content #}
+        {% block content %}{% endblock content %}
         <hr>
 
         {# Footer #}
