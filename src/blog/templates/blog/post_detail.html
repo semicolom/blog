@@ -5,7 +5,7 @@
 {% block description %}{{ post.subtitle }}{% endblock description %}
 
 {% block page_header %}
-    <header class="masthead" style="background-image: url('{% static "img/home-bg.jpg" %}')">
+    <header class="masthead" style="background-image: url('{{ post.image.url }}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">

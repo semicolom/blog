@@ -1,4 +1,5 @@
 django
 django-ckeditor
 django-extensions
+pillow
 psycopg2
