@@ -7,19 +7,21 @@
 {% block h2 %}Home Page H2{% endblock h2 %}
 
 {% block content %}
-    {# Last Post #}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="post-preview">
-                    <a href="{% url 'blog:detail' last_post.slug %}">
-                        <h2 class="post-title">{{ last_post.title }}</h2>
-                        <h3 class="post-subtitle">{{ last_post.subtitle }}</h3>
-                    </a>
-                    <p class="post-meta">Posted {{ last_post.created | naturalday }}</p>
+    {% if last_post %}
+        {# Last Post #}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-preview">
+                        <a href="{% url 'blog:detail' last_post.slug %}">
+                            <h2 class="post-title">{{ last_post.title }}</h2>
+                            <h3 class="post-subtitle">{{ last_post.subtitle }}</h3>
+                        </a>
+                        <p class="post-meta">Posted {{ last_post.created | naturalday }}</p>
+                    </div>
+                    <hr>
                 </div>
-                <hr>
             </div>
         </div>
-    </div>
+    {% endif %}
 {% endblock content %}
