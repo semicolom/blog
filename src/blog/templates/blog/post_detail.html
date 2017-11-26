@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load humanize static %}
 
-{% block content %}
-    {# Page Header #}
-    <header class="masthead" style="background-image: url('{% static "img/post-bg.jpg" %}')">
+{% block title %}{{ post.title }}{% endblock title %}
+{% block description %}{{ post.subtitle }}{% endblock description %}
+
+{% block page_header %}
+    <header class="masthead" style="background-image: url('{% static "img/home-bg.jpg" %}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -17,7 +19,9 @@
             </div>
         </div>
     </header>
+{% endblock page_header %}
 
+{% block content %}
     {# Post Content #}
     <article>
         <div class="container">
