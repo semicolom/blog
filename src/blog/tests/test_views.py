@@ -10,8 +10,8 @@ class PostListViewTestCase(TestCase):
     url = reverse_lazy('home')
 
     def test_list_order(self):
-        post_1 = mommy.make(Post)
-        post_2 = mommy.make(Post)
+        post_1 = mommy.make(Post, body='Test')
+        post_2 = mommy.make(Post, body='Test')
 
         response = self.client.get(self.url)
         self.assertListEqual(
