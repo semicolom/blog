@@ -19,3 +19,6 @@ MIDDLEWARE += [
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+# Site contants
+SITE_INFO['GOOGLE_ANALYTICS'] = None
