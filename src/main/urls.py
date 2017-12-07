@@ -1,15 +1,13 @@
 from django.conf import settings
-from django.conf.urls import url, include
 from django.contrib import admin
-
-from blog import urls as blog_urls
+from django.urls import path, include
 
 from . import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', views.HomeView.as_view(), name='home'),
-    url(r'^blog/', include(blog_urls, namespace='blog')),
+    path('admin/', admin.site.urls),
+    path('', views.HomeView.as_view(), name='home'),
+    path('blog/', include('blog.urls')),
 ]
 
 
@@ -21,5 +19,5 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
     urlpatterns = [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
+        path('__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
