@@ -26,18 +26,18 @@ virtualenv_base:
 	test -d venv || virtualenv -p python3.5 venv
 	$(PIP) install -U "pip"
 
-virtualenv_prod: virtualenv_base
+virtualenv: virtualenv_base
 	$(PIP) install -r $(REQUIREMENTS)
 
-virtualenv: virtualenv_base
+virtualenv_test: virtualenv_base
 	$(PIP) install -r $(REQUIREMENTS_TEST)
 
-install: requirements virtualenv
+install: virtualenv
 
-isort: virtualenv
+isort: virtualenv_test
 	$(ISORT) -rc -y src/
 
-test: virtualenv
+test: virtualenv_test
 	$(ISORT) -rc -c src/
 	$(FLAKE8) src/
 	$(COVERAGE) run --source='src/' src/manage.py test src/ --settings=settings.dev
