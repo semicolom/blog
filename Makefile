@@ -9,11 +9,15 @@ REQUIREMENTS:=requirements/requirements.txt
 REQUIREMENTS_BASE:=requirements/base.txt
 REQUIREMENTS_TEST:=requirements/test.txt
 
+ARTIFACT:=blog.tar.gz
+PIP_DOWNLOAD:=.pip_download
+
 .PHONY: requirements
 
 clean:
 	@find . -name *.pyc -delete
-	@rm -rf venv
+	@rm -rf venv $(PIP_DOWNLOAD)
+	@rm -f $(ARTIFACT)
 
 requirements:
 	virtualenv -p python3.5 temp_venv
@@ -32,7 +36,13 @@ virtualenv: virtualenv_base
 virtualenv_test: virtualenv_base
 	$(PIP) install -r $(REQUIREMENTS_TEST)
 
-install: virtualenv
+install: virtualenv_base
+	$(PIP) install -I --no-index --find-links=$(PIP_DOWNLOAD) $(PIP_DOWNLOAD)/*
+
+build: clean virtualenv_base
+	@mkdir $(PIP_DOWNLOAD)
+	$(PIP) download --dest $(PIP_DOWNLOAD) -r $(REQUIREMENTS)
+	@tar -czf $(ARTIFACT) --exclude=venv --exclude=.git --exclude=$(ARTIFACT) * $(PIP_DOWNLOAD)
 
 isort: virtualenv_test
 	$(ISORT) -rc -y src/
