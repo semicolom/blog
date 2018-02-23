@@ -143,3 +143,6 @@ SITE_INFO = {
     'GITHUB_URL': "https://github.com/tcolom",
     'GOOGLE_ANALYTICS': "UA-110395817-1",
 }
+
+# Django debug toolbar settings
+DEBUG_TOOLBAR_ENABLED = True

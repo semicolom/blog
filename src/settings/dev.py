@@ -10,6 +10,7 @@ DATABASES['default'].update({
 })
 
 # Django debug toolbar settings
+DEBUG_TOOLBAR_ENABLED = True
 INSTALLED_APPS += [
     'debug_toolbar',
 ]

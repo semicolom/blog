@@ -12,7 +12,7 @@ urlpatterns = [
 
 
 # Django debug toolbar URLs
-if settings.DEBUG:
+if settings.DEBUG_TOOLBAR_ENABLED:
     import debug_toolbar
     from django.conf.urls.static import static
 
