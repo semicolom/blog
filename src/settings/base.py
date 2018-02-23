@@ -145,4 +145,4 @@ SITE_INFO = {
 }
 
 # Django debug toolbar settings
-DEBUG_TOOLBAR_ENABLED = True
+DEBUG_TOOLBAR_ENABLED = False
