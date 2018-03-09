@@ -3,4 +3,4 @@ django
 django-ckeditor
 django-extensions
 pillow
-psycopg2
+psycopg2-binary
