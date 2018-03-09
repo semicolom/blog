@@ -10,3 +10,6 @@ DATABASES['default'].update({
     'PASSWORD': 'blog',
     'HOST': '127.0.0.1',
 })
+
+# Site contants
+SITE_INFO['GOOGLE_ANALYTICS'] = None
