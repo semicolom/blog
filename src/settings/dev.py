@@ -1,6 +1,7 @@
-from .base import *
+from .test import *
 
 DEBUG = True
+SECRET_KEY = 'dev'
 
 # Database
 DATABASES['default'].update({
@@ -10,16 +11,17 @@ DATABASES['default'].update({
 })
 
 # Django debug toolbar settings
-DEBUG_TOOLBAR_ENABLED = True
-INSTALLED_APPS += [
-    'debug_toolbar',
-]
-MIDDLEWARE += [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-]
-INTERNAL_IPS = [
-    '127.0.0.1',
-]
+DEBUG_TOOLBAR = True
+if DEBUG_TOOLBAR:
+    INSTALLED_APPS += [
+        'debug_toolbar',
+    ]
+    MIDDLEWARE += [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    ]
+    INTERNAL_IPS = [
+        '127.0.0.1',
+    ]
 
 # Site contants
 SITE_INFO['GOOGLE_ANALYTICS'] = None

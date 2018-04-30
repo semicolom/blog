@@ -1,6 +1,14 @@
-bpython
 django
-django-ckeditor
-django-extensions
-pillow
+
+# PostgrSQL - Python
 psycopg2-binary
+
+# A better shell
+django-extensions
+bpython
+
+# Image lib
+pillow
+
+# Django admin text editor
+django-ckeditor

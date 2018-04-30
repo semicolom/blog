@@ -1,8 +1,14 @@
 # Blog
 
-## Local installation
+## Installation
 
-Run `make virtualenv_test`
+Make sure you have installed in your OS
+```
+make
+python3.6
+virtualenv
+postgresql
+```
 
 Create a PostgreSQL database
 ```sh
@@ -12,6 +18,13 @@ CREATE DATABASE blog;
 CREATE USER blog WITH PASSWORD 'blog';
 GRANT ALL PRIVILEGES ON DATABASE blog TO blog;
 ALTER USER blog CREATEDB;
+```
+
+Then run:
+```
+make requirements
+make virtualenv_test
+make migrate
 ```
 
 ## Run tests
