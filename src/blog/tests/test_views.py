@@ -7,7 +7,8 @@ from ..models import Post
 
 
 class PostListViewTestCase(TestCase):
-    url = reverse_lazy('blog:list')
+    # url = reverse_lazy('blog:list')
+    url = reverse_lazy('home')
 
     def test_list_order(self):
         post_1 = mommy.make(Post, body='Test')
