@@ -41,10 +41,10 @@ build: clean virtualenv_base
 	$(PIP) download --dest $(PIP_DOWNLOAD) -r $(REQUIREMENTS)
 	@tar -czf $(ARTIFACT) --exclude=venv --exclude=.git --exclude=$(ARTIFACT) * $(PIP_DOWNLOAD)
 
-isort: virtualenv_test
+isort: virtualenv
 	$(ISORT) -rc -y src/
 
-test: virtualenv_test
+test: virtualenv
 	$(ISORT) -rc -c src/
 	$(FLAKE8) src/
 	$(COVERAGE) run --source='src/' src/manage.py test src/
