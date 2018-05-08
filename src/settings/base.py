@@ -145,8 +145,8 @@ LOGGING = {
 # Site constants
 SITE_INFO = {
     'AUTHOR_NAME': "Toni Colom",
-    'SITE_NAME': "bool(basaur)",
-    'SITE_URL': 'http://www.blog.com',
+    'SITE_NAME': "semicolom;",
+    'SITE_URL': 'http://www.semicolom.com',
     'GITHUB_URL': "https://github.com/tcolom",
     'GOOGLE_ANALYTICS': "UA-110395817-1",
 }
