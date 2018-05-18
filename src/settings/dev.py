@@ -26,3 +26,6 @@ if DEBUG_TOOLBAR:
 # Site contants
 SITE_INFO['GOOGLE_ANALYTICS'] = None
 SITE_INFO['SITE_URL'] = 'http://127.0.0.1:8000'
+
+# AWS S3
+AWS_STORAGE_BUCKET_NAME = 'semicolom-dev'
