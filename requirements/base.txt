@@ -7,8 +7,10 @@ psycopg2-binary
 django-extensions
 bpython
 
-# Image lib
-pillow
-
 # Django admin text editor
 django-ckeditor
+
+# Store images on AWS S3
+pillow
+boto3
+django-storages

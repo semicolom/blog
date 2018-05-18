@@ -9,11 +9,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.semicolom.com']
 
 ADMINS = [
     ('Toni Colom', 'tcolomquetglas@gmail.com')
@@ -76,9 +76,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blog',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'USER': os.environ.get('DJANGO_DATABASE_DEFAULT_USER', ''),
+        'PASSWORD': os.environ.get('DJANGO_DATABASE_DEFAULT_PASSWORD', ''),
+        'HOST': os.environ.get('DJANGO_DATABASE_DEFAULT_HOST', ''),
     }
 }
 
@@ -147,6 +147,22 @@ SITE_INFO = {
     'AUTHOR_NAME': "Toni Colom",
     'SITE_NAME': "semicolom;",
     'SITE_URL': 'http://www.semicolom.com',
-    'GITHUB_URL': "https://github.com/tcolom",
+    'GITHUB_URL': "https://github.com/semicolom",
     'GOOGLE_ANALYTICS': "UA-110395817-1",
 }
+
+# AWS S3
+DEFAULT_FILE_STORAGE = 'main.storage_backends.MediaStorage'
+AWS_ACCESS_KEY_ID = os.environ.get('DJANGO_AWS_ACCESS_KEY_ID', '')
+AWS_SECRET_ACCESS_KEY = os.environ.get('DJANGO_AWS_SECRET_ACCESS_KEY', '')
+AWS_QUERYSTRING_AUTH = False
+AWS_STORAGE_BUCKET_NAME = 'semicolom'
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.environ.get('DJANGO_EMAIL_HOST', '')
+EMAIL_PORT = os.environ.get('DJANGO_EMAIL_PORT', '')
+EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_EMAIL_HOST_PASSWORD', '')
+EMAIL_USE_TLS = True
+SERVER_EMAIL = 'no-reply@semicolom.com'
