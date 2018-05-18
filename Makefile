@@ -5,6 +5,8 @@ ISORT="venv/bin/isort"
 FLAKE8="venv/bin/flake8"
 COVERAGE="venv/bin/coverage"
 
+POSTACTIVATE=`. venv/bin/activate; . venv/bin/postactivate`
+
 REQUIREMENTS:=requirements/requirements.txt
 REQUIREMENTS_BASE:=requirements/base.txt
 REQUIREMENTS_TEST:=requirements/test.txt
@@ -61,3 +63,6 @@ migrate:
 
 collectstatic:
 	$(PYTHON) src/manage.py collectstatic -l --noinput
+
+env_vars:
+	$(POSTACTIVATE)
