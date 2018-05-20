@@ -6,7 +6,7 @@ import os
 
 import environ
 
-root = environ.Path(__file__) - 3  # three folder back (/a/b/c/ - 3 = /)
+root = environ.Path(__file__) - 2  # three folder back (/a/b/c/ - 3 = /)
 BASE_DIR = root()
 env = environ.Env()
 env.read_env(str(root.path('.env')))
@@ -122,7 +122,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Django debug toolbar settings
 DEBUG_TOOLBAR = False
