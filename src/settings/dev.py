@@ -1,14 +1,6 @@
 from .test import *
 
 DEBUG = True
-SECRET_KEY = 'dev'
-
-# Database
-DATABASES['default'].update({
-    'USER': 'blog',
-    'PASSWORD': 'blog',
-    'HOST': '127.0.0.1',
-})
 
 # Django debug toolbar settings
 DEBUG_TOOLBAR = True
