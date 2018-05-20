@@ -1,5 +1,3 @@
-import os
-
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
@@ -7,7 +5,7 @@ from django.urls import path, include
 from blog import views as blog_views
 
 urlpatterns = [
-    path('{}/'.format(os.environ.get('DJANGO_ADMIN_URL', 'admin')), admin.site.urls),
+    path('{}/'.format(settings.ADMIN_URL), admin.site.urls),
     path('', blog_views.PostListView.as_view(), name='home'),
     # path('', views.HomeView.as_view(), name='home'),
     path('blog/', include('blog.urls')),
