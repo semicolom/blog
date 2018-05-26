@@ -51,18 +51,3 @@ test: virtualenv
 	$(FLAKE8) src/
 	$(COVERAGE) run --source='src/' src/manage.py test src/
 	$(COVERAGE) report
-
-run:
-	$(PYTHON) src/manage.py runserver
-
-makemigrations:
-	$(PYTHON) src/manage.py makemigrations
-
-migrate:
-	$(PYTHON) src/manage.py migrate
-
-collectstatic:
-	$(PYTHON) src/manage.py collectstatic -l --noinput
-
-env_vars:
-	$(POSTACTIVATE)
