@@ -24,7 +24,9 @@ Then run:
 ```
 make requirements
 make virtualenv_test
-make migrate
+source venv/bin/activate
+cd src/
+./manage migrate
 ```
 
 ## Run tests
@@ -42,12 +44,6 @@ Update packages: `make requirements`. Creates a requirements.txt file with the l
 `make clean` Removes the .pyc files and deletes the virtualenv folder.
 
 `make isort` Checks your code and fixes the imports using isort.
-
-`make run` Will execute a runserver with development settings.
-
-`make makemigrations` Will execute a makemigrations with development settings.
-
-`make migrate` Will execute a migrate with development settings.
 
 ## Template theme
 
