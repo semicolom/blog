@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     # Third party
-    'ckeditor',
     'django_extensions',
 ]
 
