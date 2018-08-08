@@ -11,7 +11,7 @@ postgresql
 ```
 
 Create a PostgreSQL database
-```sh
+```
 sudo su - postgres
 psql
 CREATE DATABASE blog;
@@ -23,10 +23,10 @@ ALTER USER blog CREATEDB;
 Then run:
 ```
 make requirements
-make virtualenv_test
+make virtualenv
 source venv/bin/activate
 cd src/
-./manage migrate
+./manage.py migrate
 ```
 
 ## Run tests
@@ -45,6 +45,11 @@ Update packages: `make requirements`. Creates a requirements.txt file with the l
 
 `make isort` Checks your code and fixes the imports using isort.
 
-## Template theme
+`make run` Will execute a runserver with development settings.
 
+`make makemigrations` Will execute a makemigrations with development settings.
+
+`make migrate` Will execute a migrate with development settings.
+
+## Template theme
 https://github.com/BlackrockDigital/startbootstrap-clean-blog
