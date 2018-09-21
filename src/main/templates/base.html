@@ -37,29 +37,30 @@
         {# Navigation #}
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'home' %}">{{ SITE_NAME }}</a>
-                {% comment %}
-                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        Menu
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'home' %}" title="Home">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'blog:list' %}" title="Blog">Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                {% endcomment %}
+                <a class="navbar-brand" href="{% url 'home' %}" title="{{ SITE_NAME }}">{{ SITE_NAME }}</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menú
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}" title="Home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog:list' %}" title="Blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}" title="Contacto">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         {# Page Header #}
         {% block page_header %}
-            <header class="masthead" style="background-image: url('{% static "img/home-bg.jpg" %}')">
+            <header class="masthead" style="background-image: url('{% block header_img %}{% endblock header_img %}')">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
@@ -67,6 +68,7 @@
                             <div class="site-heading">
                                 <h1>{% block h1 %}{% endblock h1 %}</h1>
                                 <h2 class="subheading">{% block h2 %}{% endblock h2 %}</h2>
+                                {% block page_header_extra_content %}{% endblock page_header_extra_content %}
                             </div>
                         </div>
                     </div>

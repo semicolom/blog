@@ -2,9 +2,11 @@
 {% load humanize static %}
 
 {% block title %}Toni Colom's blog | {{ SITE_NAME }}{% endblock title %}
-{% block description %}Blog where you can find tutorials and solve problems about Django, python, ansible...{% endblock description %}
+{% block description %}Blog where you can find tutorials and solve problems about Django, Python and web development.{% endblock description %}
+
+{% block header_img %}{% static "img/blog-bg.jpg" %}{% endblock header_img %}
 {% block h1 %}Blog{% endblock h1 %}
-{% block h2 %}Site under construction{% endblock h2 %}
+{% block h2 %}Django y Python & Web development{% endblock h2 %}
 
 {% block content %}
     {# Post List #}
@@ -21,7 +23,7 @@
                     </div>
                     <hr>
                 {% endfor %}
-          
+
                 {% comment %}
                     <!-- Pager -->
                     <div class="clearfix">
