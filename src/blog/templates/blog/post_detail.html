@@ -1,25 +1,15 @@
 {% extends "base.html" %}
-{% load humanize static %}
+{% load humanize %}
 
 {% block title %}{{ post.title }}{% endblock title %}
 {% block description %}{{ post.subtitle }}{% endblock description %}
 
-{% block page_header %}
-    <header class="masthead" style="background-image: url('{{ post.image.url }}')">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="post-heading">
-                        <h1>{{ post.title }}</h1>
-                        <h2 class="subheading">{{ post.subtitle }}</h2>
-                        <span class="meta">Posted {{ post.created | naturalday}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-{% endblock page_header %}
+{% block header_img %}{{ post.image.url }}{% endblock header_img %}
+{% block h1 %}{{ post.title }}{% endblock h1 %}
+{% block h2 %}{{ post.subtitle }}{% endblock h2 %}
+{% block page_header_extra_content %}
+    <span class="meta">Posted {{ post.created | naturalday}}</span>
+{% endblock page_header_extra_content %}
 
 {% block content %}
     {# Post Content #}

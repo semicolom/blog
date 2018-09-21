@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     # Third party
+    'bootstrap4',
     'django_extensions',
+    'captcha',
+    'djtools.contact',
 ]
 
 MIDDLEWARE = [
@@ -169,3 +172,11 @@ EMAIL_HOST_USER = env('DJANGO_EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = env('DJANGO_EMAIL_HOST_PASSWORD', default='')
 EMAIL_USE_TLS = True
 SERVER_EMAIL = 'no-reply@semicolom.com'
+
+# DjTools
+DJTOOLS_CONTACT_SITE_DOMAIN = "www.semicolom.com"
+DJTOOLS_CONTACT_MAIL_FROM = SERVER_EMAIL
+DJTOOLS_CONTACT_MAIL_TO = ADMINS
+
+# ReCaptcha
+NOCAPTCHA = True

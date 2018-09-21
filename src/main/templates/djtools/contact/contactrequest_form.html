@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap4 i18n static %}
+
+{% block header_img %}{% static "img/contact-bg.jpg" %}{% endblock header_img %}
+{% block h1 %}Contacto{% endblock h1 %}
+{% block h2 %}¿Tienes alguna consulta?{% endblock h2 %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {% bootstrap_messages %}
+
+                <form method="POST" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                        <button type="submit" class="btn btn-primary">{% trans "Enviar" %}</button>
+                    {% endbuttons %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

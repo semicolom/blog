@@ -2,14 +2,15 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-from blog import views as blog_views
+from djtools.contact.views import ContactRequestView
 
+from . import views
 
 urlpatterns = [
-    path('{}'.format(settings.ADMIN_URL), admin.site.urls),
-    path('', blog_views.PostListView.as_view(), name='home'),
-    # path('', views.HomeView.as_view(), name='home'),
+    path('', views.HomeView.as_view(), name='home'),
+    path('{}/'.format(settings.ADMIN_URL), admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('contacto/', ContactRequestView.as_view(), name='contact'),
 ]
 
 # On development serve media and static files using django

@@ -14,3 +14,7 @@ django-environ  # https://github.com/joke2k/django-environ
 pillow
 boto3
 django-storages
+
+# Contact form
+django-tools-contact
+django-bootstrap4
