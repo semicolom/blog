@@ -20,7 +20,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['www.semicolom.com']
 
 ADMINS = [
-    ('Toni Colom', 'tcolomquetglas@gmail.com')
+    ('Toni Colom', 'toni@semicolom.com')
 ]
 ADMIN_URL = env('DJANGO_ADMIN_URL', default='admin')
 
@@ -176,7 +176,9 @@ SERVER_EMAIL = 'no-reply@semicolom.com'
 # DjTools
 DJTOOLS_CONTACT_SITE_DOMAIN = "www.semicolom.com"
 DJTOOLS_CONTACT_MAIL_FROM = SERVER_EMAIL
-DJTOOLS_CONTACT_MAIL_TO = ADMINS
+DJTOOLS_CONTACT_MAIL_TO = ["info@semicolom.com"]
 
 # ReCaptcha
 NOCAPTCHA = True
+RECAPTCHA_PUBLIC_KEY = env('DJANGO_RECAPTCHA_PUBLIC_KEY', default='')
+RECAPTCHA_PRIVATE_KEY = env('DJANGO_RECAPTCHA_PRIVATE_KEY', default='')
