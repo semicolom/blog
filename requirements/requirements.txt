@@ -11,7 +11,7 @@ django-environ==0.4.5
 django-extensions==2.1.2
 django-recaptcha==1.4.0
 django-storages==1.7.1
-django-tools-contact==0.0.4
+django-tools-contact==0.0.5
 docutils==0.14
 greenlet==0.4.15
 idna==2.7
