@@ -1,0 +1,20 @@
+#contact_map {
+    height: 580px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info .contact-info-section {
+    margin-bottom: 10px;
+}
+
+.contact-info .contact-info-section i {
+    width: 30px;
+    text-align: center;
+}
+
+.contact-info .contact-info-section span {
+    display: inline-table;
+}

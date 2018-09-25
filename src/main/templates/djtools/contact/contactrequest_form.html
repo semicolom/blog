@@ -8,7 +8,9 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="col-lg-6 col-md-12">
+                <h2>Formulario de contacto</h2>
+
                 {% bootstrap_messages %}
 
                 <form method="POST" action="{% url 'contact' %}">
@@ -19,7 +21,24 @@
                     {% endbuttons %}
                 </form>
             </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="contact-info">
+                    <h2>Información de contacto</h2>
+                    <div class="contact-info-section">
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:{{ contact_information.email }}" title="{{ contact_information.email }}">{{ contact_information.email }}</a>
+                    </div>
+                    <div class="contact-info-section">
+                        <i class="fa fa-map-marker"></i>
+                        <span>{{ contact_information.address | linebreaksbr }}</span>
+                    </div>
+                </div>
+                <div id="contact_map"></div>
+            </div>
         </div>
     </div>
 {% endblock content %}
 
+{% block javascript %}
+    {% include "djtools/contact/google_maps.html" %}
+{% endblock javascript %}
