@@ -176,7 +176,7 @@ SERVER_EMAIL = 'no-reply@semicolom.com'
 # DjTools
 DJTOOLS_CONTACT_SITE_DOMAIN = "www.semicolom.com"
 DJTOOLS_CONTACT_MAIL_FROM = SERVER_EMAIL
-DJTOOLS_CONTACT_MAIL_TO = ["info@semicolom.com"]
+DJTOOLS_CONTACT_MAIL_TO = ["toni@semicolom.com"]
 DJTOOLS_CONTACT_INFO = True
 DJTOOLS_CONTACT_GMAPS_APIKEY = env('DJANGO_GMAPS_APIKEY', default=None)
 
