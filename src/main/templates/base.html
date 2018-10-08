@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{% block html_lang %}es{% endblock html_lang %}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +9,8 @@
         <title>{% block title %}{% endblock title %} | {{ SITE_NAME }}</title>
         <meta name="description" content="{% block description %}{% endblock description %}">
         <meta name="author" content="{{ AUTHOR_NAME }}">
+        <meta name="googlebot" content="index, follow"/>
+        <meta name="robots" content="index, follow"/>
 
         {% if GOOGLE_ANALYTICS %}
             <!-- Global site tag (gtag.js) - Google Analytics -->
