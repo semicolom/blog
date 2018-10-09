@@ -154,6 +154,7 @@ SITE_INFO = {
     'SITE_NAME': "semicolom;",
     'SITE_URL': 'http://www.semicolom.com',
     'GITHUB_URL': "https://github.com/semicolom",
+    'TWITTER_URL': "https://twitter.com/semicolom_",
     'GOOGLE_ANALYTICS': "UA-110395817-1",
 }
 

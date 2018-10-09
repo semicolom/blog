@@ -18,3 +18,12 @@
 .contact-info .contact-info-section span {
     display: inline-table;
 }
+
+#mainNav .navbar-brand svg {
+    height: 22px;
+    fill: white;
+}
+
+#mainNav.is-visible .navbar-brand svg {
+    fill: #393E43;
+}
