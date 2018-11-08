@@ -4,9 +4,6 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = True
 
-# Site contants
-SITE_INFO['GOOGLE_ANALYTICS'] = None
-
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

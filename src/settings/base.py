@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'captcha',
     'djtools.contact',
+    'djtools.seo',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'djtools.seo.context_processors.google_analytics',
                 'blog.context_processors.site_info',
             ],
         },
@@ -155,7 +157,6 @@ SITE_INFO = {
     'SITE_URL': 'http://www.semicolom.com',
     'GITHUB_URL': "https://github.com/semicolom",
     'TWITTER_URL': "https://twitter.com/semicolom_",
-    'GOOGLE_ANALYTICS': "UA-110395817-1",
 }
 
 # AWS S3
@@ -185,3 +186,6 @@ DJTOOLS_CONTACT_GMAPS_APIKEY = env('DJANGO_GMAPS_APIKEY', default=None)
 NOCAPTCHA = True
 RECAPTCHA_PUBLIC_KEY = env('DJANGO_RECAPTCHA_PUBLIC_KEY', default=None)
 RECAPTCHA_PRIVATE_KEY = env('DJANGO_RECAPTCHA_PRIVATE_KEY', default=None)
+
+# Google Analytics
+GOOGLE_ANALYTICS_TRACKING_ID = env('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID', default=None)

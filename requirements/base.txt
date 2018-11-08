@@ -18,3 +18,6 @@ django-storages
 # Contact form
 django-tools-contact
 django-bootstrap4
+
+# SEO tools
+django-tools-seo
