@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 {% load humanize static %}
 
-{% block title %}Desarrollo de Webs, Apps & APIs en Palma de Mallorca{% endblock title %}
-{% block description %}Desarrollador fullstack freelance para webs, apps y APIs en Palma de Mallorca.{% endblock description %}
+{% block title %}Desarrollo de APIs, apps & webs en Palma de Mallorca{% endblock title %}
+{% block description %}Desarrollador fullstack freelance para APIs, apps y webs en Palma de Mallorca.{% endblock description %}
 
 {% block header_img %}{% static "img/home-bg.jpg" %}{% endblock header_img %}
-{% block h1 %}semicolom;{% endblock h1 %}
-{% block h2 %}Desarrollo de Webs, Apps & APIs{% endblock h2 %}
+{% block h1 %}Desarrollo de <span class="typed"></span>{% endblock h1 %}
 
 {% block content %}
     {% if last_post %}
@@ -27,3 +26,18 @@
         </div>
     {% endif %}
 {% endblock content %}
+
+{% block javascript %}
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script type="text/javascript">
+        var options = {
+            strings: ["APIs", "Apps", "Webs"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true,
+        }
+
+        var typed = new Typed(".typed", options);
+    </script>
+{% endblock javascript %}
