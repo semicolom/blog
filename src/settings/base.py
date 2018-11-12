@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'captcha',
     'djtools.contact',
     'djtools.seo',
+    'djtools.socialnetworks',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'djtools.seo.context_processors.google_analytics',
+                'djtools.socialnetworks.context_processors.social_networks',
                 'blog.context_processors.site_info',
             ],
         },
@@ -151,13 +153,9 @@ LOGGING = {
 }
 
 # Site constants
-SITE_INFO = {
-    'AUTHOR_NAME': "Toni Colom",
-    'SITE_NAME': "semicolom;",
-    'SITE_URL': 'http://www.semicolom.com',
-    'GITHUB_URL': "https://github.com/semicolom",
-    'TWITTER_URL': "https://twitter.com/semicolom_",
-}
+AUTHOR_NAME = "Toni Colom",
+SITE_NAME = "semicolom;",
+SITE_URL = 'http://www.semicolom.com',
 
 # AWS S3
 DEFAULT_FILE_STORAGE = 'main.storage_backends.MediaStorage'

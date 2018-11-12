@@ -21,3 +21,6 @@ django-bootstrap4
 
 # SEO tools
 django-tools-seo
+
+# Social Network links
+django-tools-socialnetworks
