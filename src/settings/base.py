@@ -153,9 +153,9 @@ LOGGING = {
 }
 
 # Site constants
-AUTHOR_NAME = "Toni Colom",
-SITE_NAME = "semicolom;",
-SITE_URL = 'http://www.semicolom.com',
+AUTHOR_NAME = "Toni Colom"
+SITE_NAME = "semicolom;"
+SITE_URL = "http://www.semicolom.com"
 
 # AWS S3
 DEFAULT_FILE_STORAGE = 'main.storage_backends.MediaStorage'
