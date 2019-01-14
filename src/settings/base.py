@@ -28,7 +28,6 @@ ADMIN_URL = env('DJANGO_ADMIN_URL', default='admin')
 INSTALLED_APPS = [
     # Local
     'main.apps.MainConfig',
-    'blog.apps.BlogConfig',
 
     # Django
     'django.contrib.admin',
@@ -76,7 +75,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'djtools.seo.context_processors.google_analytics',
                 'djtools.socialnetworks.context_processors.social_networks',
-                'blog.context_processors.site_info',
+                'main.context_processors.site_info',
             ],
         },
     },
