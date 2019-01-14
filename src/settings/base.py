@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'djtools.contact',
     'djtools.seo',
     'djtools.socialnetworks',
+    'djtools.blog',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,9 @@ ROOT_URLCONF = 'main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

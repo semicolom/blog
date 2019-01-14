@@ -11,6 +11,7 @@ django-environ==0.4.5
 django-extensions==2.1.4
 django-recaptcha==1.5.0
 django-storages==1.7.1
+django-tools-blog==1.0.1
 django-tools-contact==1.2.2
 django-tools-seo==1.0.5
 django-tools-socialnetworks==1.1.3

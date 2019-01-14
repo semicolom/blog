@@ -24,3 +24,6 @@ django-tools-seo
 
 # Social Network links
 django-tools-socialnetworks
+
+# Django app for blog
+django-tools-blog

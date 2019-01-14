@@ -1,3 +1,15 @@
+/* Menu */
+#mainNav .navbar-brand svg {
+    height: 22px;
+    fill: #393E43;
+}
+
+#mainNav .navbar-nav > li.nav-item > a {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Contact */
 #contact_map {
     height: 580px;
 }
@@ -19,11 +31,17 @@
     display: inline-table;
 }
 
-#mainNav .navbar-brand svg {
-    height: 22px;
-    fill: white;
-}
+/* Responsive */
+@media only screen and (min-width: 992px) {
+    #mainNav .navbar-brand svg {
+        fill: white;
+    }
 
-#mainNav.is-visible .navbar-brand svg {
-    fill: #393E43;
+    #mainNav.is-visible .navbar-brand svg {
+        fill: #393E43;
+    }
+
+    #mainNav .navbar-nav > li.nav-item > a {
+        margin-bottom: 0px;
+    }
 }
