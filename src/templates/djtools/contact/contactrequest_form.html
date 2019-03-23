@@ -1,23 +1,26 @@
 {% extends 'base.html' %}
 {% load bootstrap4 i18n static %}
 
+{% block title %}Freelance Python Django developer{% endblock title %}
+{% block description %}Hire a freelance agile Python Django software engineer with DevOps skills in Palma de Mallorca{% endblock description %}
+
 {% block header_img %}{% static "img/contact-bg.jpg" %}{% endblock header_img %}
-{% block h1 %}Contacto{% endblock h1 %}
-{% block h2 %}¿Tienes alguna consulta?{% endblock h2 %}
+{% block h1 %}Do you want to hire me?{% endblock h1 %}
+{% block h2 %}Tell me about your project!{% endblock h2 %}
 
 {% block content %}
     <div class="container">
         <div class="row">
             <div class="offset-lg-2 col-lg-8 col-md-12">
-                <h2>Formulario de contacto</h2>
-
                 {% bootstrap_messages %}
 
-                <form method="POST" action="{% url 'contact' %}">
+                <form method="POST" action="{{ SITE_URL }}{% url 'contact' %}">
                     {% csrf_token %}
+
                     {% bootstrap_form form %}
+
                     {% buttons %}
-                        <button type="submit" class="btn btn-primary">{% trans "Enviar" %}</button>
+                        <button type="submit" class="btn btn-primary">{% trans "Send" %}</button>
                     {% endbuttons %}
                 </form>
             </div>

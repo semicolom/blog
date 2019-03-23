@@ -10,7 +10,7 @@ urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('{}/'.format(settings.ADMIN_URL), admin.site.urls),
     path('blog/', include('djtools.blog.urls')),
-    path('contacto/', ContactRequestView.as_view(), name='contact'),
+    path('hire-me/', ContactRequestView.as_view(), name='contact'),
 ]
 
 # On development serve media and static files using django

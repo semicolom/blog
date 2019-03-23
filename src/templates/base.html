@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="{% block html_lang %}es{% endblock html_lang %}">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,19 +34,18 @@
                     {% include "logo.html" %}
                 </a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menú
                     <i class="fa fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'home' %}" title="Home">Home</a>
+                            <a class="nav-link" href="{% url 'home' %}" title="API, app and web developer with Python and Django">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'blog:list' %}" title="Blog">Blog</a>
+                            <a class="nav-link" href="{% url 'blog:list' %}" title="Toni Colom's blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'contact' %}" title="Contacto">Contacto</a>
+                            <a class="nav-link" href="{% url 'contact' %}" title="Hire Python Django freelance software engineer">Hire me</a>
                         </li>
                     </ul>
                 </div>
