@@ -1,6 +1,6 @@
 blessings==1.7
-boto3==1.9.120
-botocore==1.12.120
+boto3==1.9.124
+botocore==1.12.124
 bpython==0.17.1
 certifi==2019.3.9
 chardet==3.0.4
@@ -12,7 +12,7 @@ django-extensions==2.1.6
 django-recaptcha==2.0.2
 django-storages==1.7.1
 django-tools-blog==1.0.1
-django-tools-contact==1.2.3
+django-tools-contact==1.3.1
 django-tools-seo==1.0.6
 django-tools-socialnetworks==1.1.3
 docutils==0.14
