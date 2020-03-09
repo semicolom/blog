@@ -9,6 +9,7 @@ from . import views
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('{}/'.format(settings.ADMIN_URL), admin.site.urls),
+    path('services/', include('services.urls')),
     path('blog/', include('djtools.blog.urls')),
     path('work-with-me/', ContactRequestView.as_view(), name='contact'),
 ]

@@ -28,6 +28,7 @@ ADMIN_URL = env('DJANGO_ADMIN_URL', default='admin')
 INSTALLED_APPS = [
     # Local
     'main.apps.MainConfig',
+    'services.apps.ServicesConfig',
 
     # Django
     'django.contrib.admin',

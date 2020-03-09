@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{% endblock title %}
+{% block description %}{% endblock description %}
+
+{% block header_img %}{% static "img/services-bg.jpg" %}{% endblock header_img %}
+{% block h1 %}What I do{% endblock h1 %}
+
+{% block content %}
+    {% for service in service_list %}
+        {{ service }}
+    {% endfor %}
+{% endblock content %}
