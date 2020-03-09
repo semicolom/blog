@@ -1,0 +1,4 @@
+Package  Version Latest Type 
+-------- ------- ------ -----
+Django   2.2.11  3.0.4  wheel
+docutils 0.15.2  0.16   wheel
