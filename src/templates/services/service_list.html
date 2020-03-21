@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}What is Django used for? Services provided by a freelance Python Django developer{% endblock title %}
+{% block description %}{% for service in service_list %}{{ service.title }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endblock description %}
+
+{% block header_img %}{% static "img/services-bg.jpg" %}{% endblock header_img %}
+{% block h1 %}Services{% endblock h1 %}
+
+{% block content %}
+    <div id="services" class="container">
+        <div class="row">
+            {% for service in service_list %}
+                <div class="col-sm-12 col-md-6 col-lg-4 service">
+                    <div class="service-icon">
+                        <i class="fas fa-{{ service.icon }}"></i>
+                    </div>
+                    <div class="service-text">
+                        <h2><a href="{{ SITE_URL }}{% url 'services:detail' service.slug %}">{{ service.title }}</a></h2>
+                        <p>{{ service.short_description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

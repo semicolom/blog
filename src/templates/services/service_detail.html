@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ service.title }}{% endblock title %}
+{% block description %}{{ service.subtitle }}{% endblock description %}
+
+{% block header_img %}{% if service.photo %}{{ service.photo.url }}{% endif %} {% endblock header_img %}
+{% block h1 %}{{ service.title }}{% endblock h1 %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 mb-5">
+                {{ service.description | safe }}
+            </div>
+            {% if other_services %}
+                <div class="col-12 col-md-4">
+                    <h3 class="mb-4">Otros servicios</h3>
+                    {% for other_service in other_services %}
+                        <div class="mb-3">
+                            <i class="fa fa-{{ service.icon }}"></i>
+                            <a href="{% url 'services:detail' service.slug %}" title="{{ other_service.title }}">{{ other_service.title }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

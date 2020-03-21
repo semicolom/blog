@@ -1,30 +1,60 @@
 {% extends "base.html" %}
 {% load humanize static %}
 
-{% block title %}API, app and web developer with Python and Django{% endblock title %}
-{% block description %}Fullstack freelance developer for APIs, apps and webs with Python and Django.{% endblock description %}
+{% block title %}Toni Colom, Python Django freelance developer{% endblock title %}
+{% block description %}APIs, apps and webs development with Python and Django{% endblock description %}
 
 {% block header_img %}{% static "img/home-bg.jpg" %}{% endblock header_img %}
 {% block h1 %}I develop<br><span class="typed"></span>{% endblock h1 %}
 
 {% block content %}
-    {% if last_post %}
-        {# Last Post #}
-        <div class="container">
+    <div id="home" class="container">
+        {% if FLAGS.SERVICES_ENABLED and featured_services %}
+            <h2 class="text-center">Services</h2>
             <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
+                {% for service in featured_services %}
+                    <div class="col-sm-12 col-md-4 service">
+                        <div class="service-icon">
+                            <i class="fas fa-{{ service.icon }}"></i>
+                        </div>
+                        <div class="service-text">
+                            <h2><a href="{{ SITE_URL }}{% url 'services:detail' service.slug %}">{{ service.title }}</a></h2>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-offset-6 col-12 text-center">
+                    <a class="btn btn-primary" href="{{ SITE_URL }}{% url 'services:list' %}" title="What is Django used for?">See more services</a>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+        {% endif %}
+
+        {% if last_post %}
+            <h2 class="text-center">Newest post</h2>
+            <div class="row">
+                <div class="col-12">
                     <div class="post-preview">
-                        <a href="{% url 'blog:detail' last_post.slug %}">
-                            <h2 class="post-title">{{ last_post.title }}</h2>
+                        <a href="{{ SITE_URL }}{% url 'blog:detail' last_post.slug %}">
+                            <h3 class="post-title">{{ last_post.title }}</h3>
                             <p class="post-subtitle">{{ last_post.subtitle }}</p>
                         </a>
                         <p class="post-meta">Posted {{ last_post.created | naturalday }}</p>
                     </div>
-                    <hr>
                 </div>
             </div>
-        </div>
-    {% endif %}
+            <div class="row">
+                <div class="col-offset-6 col-12 text-center">
+                    <a class="btn btn-primary" href="{{ SITE_URL }}{% url 'blog:list' %}" title="Toni Colom's blog">Go to blog</a>
+                </div>
+            </div>
+            <br>
+        {% endif %}
+     </div>
 {% endblock content %}
 
 {% block javascript %}

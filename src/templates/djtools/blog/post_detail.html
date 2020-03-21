@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load humanize %}
 
-{% block html_lang %}en{% endblock html_lang %}
-
 {% block title %}{{ post.title }}{% endblock title %}
 {% block description %}{{ post.subtitle }}{% endblock description %}
 
@@ -15,14 +13,11 @@
 {% endblock page_header_extra_content %}
 
 {% block content %}
-    {# Post Content #}
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    {{ post.body | safe }}
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {{ post.body | safe }}
             </div>
         </div>
-    </article>
+    </div>
 {% endblock content %}

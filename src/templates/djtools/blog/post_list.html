@@ -15,7 +15,7 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 {% for post in post_list %}
                     <div class="post-preview">
-                        <a href="{% url 'blog:detail' post.slug %}">
+                        <a href="{{ SITE_URL }}{% url 'blog:detail' post.slug %}">
                             <h2 class="post-title">{{ post.title }}</h2>
                             <p class="post-subtitle">{{ post.subtitle }}</p>
                         </a>

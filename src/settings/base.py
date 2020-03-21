@@ -28,6 +28,7 @@ ADMIN_URL = env('DJANGO_ADMIN_URL', default='admin')
 INSTALLED_APPS = [
     # Local
     'main.apps.MainConfig',
+    'services.apps.ServicesConfig',
 
     # Django
     'django.contrib.admin',
@@ -189,3 +190,6 @@ RECAPTCHA_PRIVATE_KEY = env('DJANGO_RECAPTCHA_PRIVATE_KEY', default='')
 
 # Google Analytics
 GOOGLE_ANALYTICS_TRACKING_ID = env('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID', default=None)
+
+# Flags
+SERVICES_ENABLED = env('DJANGO_SERVICES_ENABLED', default=True)
