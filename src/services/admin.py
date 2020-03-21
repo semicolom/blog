@@ -6,7 +6,17 @@ from .models import Service
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     list_display = [
-        '__str__',
+        'title',
+        'is_active',
+        'is_featured',
         'order',
-        'active',
+    ]
+
+    list_filter = [
+        'is_active',
+        'is_featured',
+    ]
+
+    readonly_fields = [
+        'slug',
     ]

@@ -5,10 +5,22 @@
 {% block description %}{% endblock description %}
 
 {% block header_img %}{% static "img/services-bg.jpg" %}{% endblock header_img %}
-{% block h1 %}What I do{% endblock h1 %}
+{% block h1 %}Services{% endblock h1 %}
 
 {% block content %}
-    {% for service in service_list %}
-        {{ service }}
-    {% endfor %}
+    <div id="services" class="container">
+        <div class="row">
+            {% for service in service_list %}
+                <div class="col-sm-12 col-md-6 col-lg-4 service">
+                    <div class="service-icon">
+                        <i class="fas fa-{{ service.icon }}"></i>
+                    </div>
+                    <div class="service-text">
+                        <h2>{{ service.title }}</h2>
+                        <p>{{ service.short_description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}
