@@ -52,14 +52,19 @@
 }
 
 /* Services */
-.service h2 {
-  font-size: 20px;
-}
-
 .service {
   text-align: center;
   margin-bottom: 15px;
   font-size: 14px;
+}
+
+.service:hover {
+  cursor: pointer;
+}
+
+
+.service h2 {
+  font-size: 20px;
 }
 
 .service .service-icon {

@@ -9,7 +9,7 @@
 
 {% block content %}
     <div id="home" class="container">
-        {% if featured_services %}
+        {% if FLAGS.SERVICES_ENABLED and featured_services %}
             <h2 class="text-center">Services</h2>
             <div class="row">
                 {% for service in featured_services %}
@@ -18,10 +18,16 @@
                             <i class="fas fa-{{ service.icon }}"></i>
                         </div>
                         <div class="service-text">
-                            <h2>{{ service.title }}</h2>
+                            <h2><a href="{{ SITE_URL }}{% url 'services:detail' service.slug %}">{{ service.title }}</a></h2>
                         </div>
                     </div>
                 {% endfor %}
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-offset-6 col-12 text-center">
+                    <a class="btn btn-primary" href="{{ SITE_URL }}{% url 'services:list' %}" title="{# TODO #}">See more services</a>
+                </div>
             </div>
             <br>
             <hr>
@@ -33,7 +39,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="post-preview">
-                        <a href="{% url 'blog:detail' last_post.slug %}">
+                        <a href="{{ SITE_URL }}{% url 'blog:detail' last_post.slug %}">
                             <h3 class="post-title">{{ last_post.title }}</h3>
                             <p class="post-subtitle">{{ last_post.subtitle }}</p>
                         </a>
@@ -41,6 +47,12 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-offset-6 col-12 text-center">
+                    <a class="btn btn-primary" href="{{ SITE_URL }}{% url 'blog:list' %}" title="Toni Colom's blog">Go to blog</a>
+                </div>
+            </div>
+            <br>
         {% endif %}
      </div>
 {% endblock content %}

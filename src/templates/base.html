@@ -20,6 +20,7 @@
         <link href="{{ SITE_URL }}{% static "vendor/bootstrap/css/bootstrap.min.css"  %}" rel="stylesheet">
 
         {# Custom fonts for this template #}
+        <link href="{{ SITE_URL }}{% static "vendor/font-awesome/css/font-awesome.min.css"  %}" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700" rel="stylesheet">
 
         <link href="{{ SITE_URL }}{% static "css/clean-blog.css" %}" rel="stylesheet">
@@ -38,16 +39,18 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'home' %}" title="Python Django freelance developer">Home</a>
+                            <a class="nav-link" href="{{ SITE_URL }}{% url 'home' %}" title="Python Django freelance developer">Home</a>
+                        </li>
+                        {% if FLAGS.SERVICES_ENABLED %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ SITE_URL }}{% url 'services:list' %}" title="Services">Services</a>
+                            </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ SITE_URL }}{% url 'blog:list' %}" title="Toni Colom's blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'services:list' %}" title="Services">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'blog:list' %}" title="Toni Colom's blog">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'contact' %}" title="Work with a Python Django freelance software engineer">Contact</a>
+                            <a class="nav-link" href="{{ SITE_URL }}{% url 'contact' %}" title="Work with a Python Django freelance software engineer">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -87,8 +90,6 @@
                 </div>
             </div>
         </footer>
-        {# Icons #}
-        <script src="https://kit.fontawesome.com/a154f4296a.js" crossorigin="anonymous"></script>
 
         {# Bootstrap core JavaScript #}
         <script src="{{ SITE_URL }}{% static "vendor/jquery/jquery.min.js" %}"></script>
@@ -96,6 +97,13 @@
 
         {# Custom scripts for this template #}
         <script src="{{ SITE_URL }}{% static "js/clean-blog.min.js" %}"></script>
+
+        <script>
+            $(".service").click(function() {
+              window.location = $(this).find("a").attr("href");
+              return false;
+            });
+        </script>
 
         {% block javascript %}{% endblock javascript %}
     </body>
