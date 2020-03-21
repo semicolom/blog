@@ -9,3 +9,9 @@ class ServiceListView(ListView):
 
 class ServiceDetailView(DetailView):
     queryset = Service.active.all()
+
+    def get_context_data(self, **kwargs):
+        return {
+            **super().get_context_data(**kwargs),
+            'other_services': self.queryset.exclude(id=self.object.id),
+        }
