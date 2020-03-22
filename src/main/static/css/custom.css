@@ -62,8 +62,9 @@
   cursor: pointer;
 }
 
-.service h2 {
+.service .title {
   font-size: 20px;
+  display: block;
 }
 
 .service .service-icon {
@@ -91,8 +92,9 @@
   cursor: pointer;
 }
 
-.project h2 {
+.project .title {
   font-size: 20px;
+  display: block;
 }
 
 .project img {

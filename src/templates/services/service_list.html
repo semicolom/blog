@@ -15,10 +15,8 @@
                     <div class="service-icon">
                         <i class="fas fa-{{ service.icon }}"></i>
                     </div>
-                    <div class="service-text">
-                        <h2><a href="{{ SITE_URL }}{% url 'services:detail' service.slug %}">{{ service.title }}</a></h2>
-                        <p>{{ service.short_description }}</p>
-                    </div>
+                    <h2 class="title"><a href="{{ SITE_URL }}{% url 'services:detail' service.slug %}">{{ service.title }}</a></h2>
+                    <p>{{ service.short_description }}</p>
                 </div>
             {% endfor %}
         </div>

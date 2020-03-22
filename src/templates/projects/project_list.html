@@ -12,17 +12,12 @@
         <div class="row">
             {% for project in project_list %}
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-4 project linkbox">
-                    <div class="project-icon">
-                        <i class="fas fa-{{ project.icon }}"></i>
-                    </div>
-                    <div class="project-text">
-                        {% if project.thumbnail %}
-                            <img class="img-fluid mb-2" src="{{ project.thumbnail.url }}" alt="Logo {{ project.title }}">
-                        {% endif %}
-                        <h2>
-                            <a href="{{ SITE_URL }}{% url 'projects:detail' project.slug %}" title="{# TODO #}">{{ project.title }}</a>
-                        </h2>
-                    </div>
+                    {% if project.thumbnail %}
+                        <img class="img-fluid mb-2" src="{{ project.thumbnail.url }}" alt="Logo {{ project.title }}">
+                    {% endif %}
+                    <h2 class="title">
+                        <a href="{{ SITE_URL }}{% url 'projects:detail' project.slug %}" title="{# TODO #}">{{ project.title }}</a>
+                    </h2>
                 </div>
             {% endfor %}
         </div>
