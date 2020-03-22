@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     # Local
     'main.apps.MainConfig',
     'services.apps.ServicesConfig',
+    'projects.apps.ProjectsConfig',
 
     # Django
     'django.contrib.admin',
@@ -193,3 +194,4 @@ GOOGLE_ANALYTICS_TRACKING_ID = env('DJANGO_GOOGLE_ANALYTICS_TRACKING_ID', defaul
 
 # Flags
 SERVICES_ENABLED = env('DJANGO_SERVICES_ENABLED', default=True)
+PROJECTS_ENABLED = env('DJANGO_PROJECTS_ENABLED', default=True)

@@ -2,17 +2,17 @@ from django.contrib import admin
 
 from main.admin import OrderedAdmin
 
-from .models import Service
+from .models import Project
 
 
-@admin.register(Service)
-class ServiceAdmin(OrderedAdmin):
+@admin.register(Project)
+class ProjectAdmin(OrderedAdmin):
     fields = [
         'title',
-        'short_description',
         'description',
-        'icon',
+        'thumbnail',
         'photo',
+        'color',
         'order',
         'is_active',
         'is_featured',

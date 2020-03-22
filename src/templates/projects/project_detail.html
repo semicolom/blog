@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{# TODO #}{% endblock title %}
+{% block description %}{# TODO #}{% endblock description %}
+
+{% block css %}
+    <style>
+        header.masthead {
+          background-color: #{{ project.color }};
+        }
+    </style>
+{% endblock css %}
+
+{% block h1 %}{{ project.title }}{% endblock h1 %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 mb-5">
+                {{ project.description | safe }}
+            </div>
+            {% if other_projects %}
+                <div class="col-12 col-md-4">
+                    <h3 class="mb-4">Other projects</h3>
+                    {% for other_project in other_projects %}
+                        <div class="mb-3">
+                            <i class="fa fa-{{ other_project.icon }}"></i>
+                            <a href="{% url 'projects:detail' other_project.slug %}" title="{{ other_project.title }}">{{ other_project.title }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-offset-6 col-12 text-center mb-5">
+                <a class="btn btn-primary" href="{{ SITE_URL }}{% url 'contact' %}" title="Work with a Python Django freelance software engineer">Contact me</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

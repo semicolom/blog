@@ -16,15 +16,13 @@
 
         <link rel="icon" href="{{ SITE_URL }}{% static "img/logos/favicon.ico" %}">
 
-        {# Bootstrap core CSS #}
         <link href="{{ SITE_URL }}{% static "vendor/bootstrap/css/bootstrap.min.css"  %}" rel="stylesheet">
-
-        {# Custom fonts for this template #}
+        <link href="{{ SITE_URL }}{% static "css/clean-blog.css" %}" rel="stylesheet">
         <link href="{{ SITE_URL }}{% static "vendor/font-awesome/css/font-awesome.min.css"  %}" rel="stylesheet" type="text/css">
+        <link href="{{ SITE_URL }}{% static "css/custom.css" %}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700" rel="stylesheet">
 
-        <link href="{{ SITE_URL }}{% static "css/clean-blog.css" %}" rel="stylesheet">
-        <link href="{{ SITE_URL }}{% static "css/custom.css" %}" rel="stylesheet">
+        {% block css %}{% endblock css %}
     </head>
     <body>
         {# Navigation #}
@@ -46,6 +44,11 @@
                                 <a class="nav-link" href="{{ SITE_URL }}{% url 'services:list' %}" title="What is Django used for?">Services</a>
                             </li>
                         {% endif %}
+                        {% if FLAGS.PROJECTS_ENABLED %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ SITE_URL }}{% url 'projects:list' %}" title="{# TODO #}">Projects</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ SITE_URL }}{% url 'blog:list' %}" title="Toni Colom's blog">Blog</a>
                         </li>
@@ -59,7 +62,7 @@
 
         {# Page Header #}
         {% block page_header %}
-            <header class="masthead" style="background-image: url('{% block header_img %}{% endblock header_img %}')">
+            <header class="masthead"{% if not without_header_img %} style="background-image: url('{% block header_img %}{% endblock header_img %}')"{% endif %}>
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
@@ -94,9 +97,6 @@
         {# Bootstrap core JavaScript #}
         <script src="{{ SITE_URL }}{% static "vendor/jquery/jquery.min.js" %}"></script>
         <script src="{{ SITE_URL }}{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
-
-        {# Custom scripts for this template #}
-        <script src="{{ SITE_URL }}{% static "js/clean-blog.min.js" %}"></script>
 
         <script>
             $(".service").click(function() {

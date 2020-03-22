@@ -3,7 +3,7 @@
 {% block title %}{{ service.title }}{% endblock title %}
 {% block description %}{{ service.subtitle }}{% endblock description %}
 
-{% block header_img %}{% if service.photo %}{{ service.photo.url }}{% endif %} {% endblock header_img %}
+{% block header_img %}{% if service.photo %}{{ service.photo.url }}{% endif %}{% endblock header_img %}
 {% block h1 %}{{ service.title }}{% endblock h1 %}
 
 {% block content %}
@@ -14,15 +14,20 @@
             </div>
             {% if other_services %}
                 <div class="col-12 col-md-4">
-                    <h3 class="mb-4">Otros servicios</h3>
+                    <h3 class="mb-4">Other services</h3>
                     {% for other_service in other_services %}
                         <div class="mb-3">
-                            <i class="fa fa-{{ service.icon }}"></i>
-                            <a href="{% url 'services:detail' service.slug %}" title="{{ other_service.title }}">{{ other_service.title }}</a>
+                            <i class="fa fa-{{ other_service.icon }}"></i>
+                            <a href="{% url 'services:detail' other_service.slug %}" title="{{ other_service.title }}">{{ other_service.title }}</a>
                         </div>
                     {% endfor %}
                 </div>
             {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-offset-6 col-12 text-center mb-5">
+                <a class="btn btn-primary" href="{{ SITE_URL }}{% url 'contact' %}" title="Work with a Python Django freelance software engineer">Contact me</a>
+            </div>
         </div>
     </div>
 {% endblock content %}
