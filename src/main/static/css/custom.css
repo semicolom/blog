@@ -80,3 +80,21 @@
   color: #fff;
   background-color: #393E43;
 }
+
+/* Projects */
+.project {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.project:hover {
+  cursor: pointer;
+}
+
+.project h2 {
+  font-size: 20px;
+}
+
+.project img {
+  height: 100px;
+}

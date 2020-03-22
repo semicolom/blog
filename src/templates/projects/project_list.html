@@ -11,12 +11,17 @@
     <div id="services" class="container">
         <div class="row">
             {% for project in project_list %}
-                <div class="col-sm-12 col-md-6 col-lg-4 project">
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-4 project linkbox">
                     <div class="project-icon">
                         <i class="fas fa-{{ project.icon }}"></i>
                     </div>
                     <div class="project-text">
-                        <h2><a href="{{ SITE_URL }}{% url 'projects:detail' project.slug %}">{{ project.title }}</a></h2>
+                        {% if project.thumbnail %}
+                            <img class="img-fluid mb-2" src="{{ project.thumbnail.url }}" alt="Logo {{ project.title }}">
+                        {% endif %}
+                        <h2>
+                            <a href="{{ SITE_URL }}{% url 'projects:detail' project.slug %}" title="{# TODO #}">{{ project.title }}</a>
+                        </h2>
                     </div>
                 </div>
             {% endfor %}

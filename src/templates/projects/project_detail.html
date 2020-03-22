@@ -17,6 +17,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8 mb-5">
+                {% if project.photo %}
+                    <img class="img-fluid mb-5" src="{{ project.photo.url }}" alt="{# TODO #}">
+                {% endif %}
                 {{ project.description | safe }}
             </div>
             {% if other_projects %}
