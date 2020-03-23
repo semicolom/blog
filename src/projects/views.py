@@ -23,7 +23,7 @@ class ProjectDetailView(DetailView):
         return {
             **super().get_context_data(**kwargs),
             'without_header_img': True,
-            'services': self.object.services.all(),
+            'services': self.object.services.active.all(),
             'other_projects': self.queryset.filter(
                 categories__in=self.object.categories.all(),
             ).exclude(
