@@ -1,22 +1,20 @@
 from django.contrib import admin
 
+from main.admin import OrderedAdmin
+
 from .models import Service
 
 
 @admin.register(Service)
-class ServiceAdmin(admin.ModelAdmin):
-    list_display = [
+class ServiceAdmin(OrderedAdmin):
+    fields = [
         'title',
-        'is_active',
-        'is_featured',
+        'short_description',
+        'description',
+        'icon',
+        'photo',
         'order',
-    ]
-
-    list_filter = [
         'is_active',
         'is_featured',
-    ]
-
-    readonly_fields = [
         'slug',
     ]

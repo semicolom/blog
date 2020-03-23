@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }}, a project build with Python and Django{% endblock title %}
+{% block description %}{{ project.title }}. {% for service in services %}{{ service.title }}, {% endfor %}. {% for category in project.categories.all %}{{ category.name }}, {% endfor %}{% endblock description %}
+
+{% block css %}
+    <style>
+        header.masthead {
+          background-color: #{{ project.color }};
+        }
+    </style>
+{% endblock css %}
+
+{% block h1 %}{{ project.title }}{% endblock h1 %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 mb-5">
+                {% if project.photo %}
+                    <img class="img-fluid mb-5" src="{{ project.photo.url }}" alt="{{ project.title }}, a project build with Python and Django">
+                {% endif %}
+                {{ project.description | safe }}
+            </div>
+            <div class="col-12 col-md-5">
+                <div class="row">
+                    {% if services %}
+                        <div class="col-12 mb-5">
+                            <h3 class="mb-4">Services</h3>
+                            {% for service in services %}
+                                <div class="mb-3">
+                                    <i class="fa fa-{{ service.icon }}"></i>
+                                    <a href="{% url 'services:detail' service.slug %}" title="{{ service.title }}">{{ service.title }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% if other_projects %}
+                        <div class="col-12">
+                            <h3 class="mb-4">Other projects</h3>
+                            {% for other_project in other_projects %}
+                                <div class="mb-3">
+                                    <a href="{% url 'projects:detail' other_project.slug %}" title="{{ project.title }}, a project build with Python and Django">{{ other_project.title }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-offset-6 col-12 text-center mb-5">
+                <a class="btn btn-primary" href="{{ SITE_URL }}{% url 'contact' %}" title="Work with a Python Django freelance software engineer">Contact me</a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

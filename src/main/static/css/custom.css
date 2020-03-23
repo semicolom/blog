@@ -62,9 +62,9 @@
   cursor: pointer;
 }
 
-
-.service h2 {
+.service .title {
   font-size: 20px;
+  display: block;
 }
 
 .service .service-icon {
@@ -80,4 +80,23 @@
 .service:hover i {
   color: #fff;
   background-color: #393E43;
+}
+
+/* Projects */
+.project {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.project:hover {
+  cursor: pointer;
+}
+
+.project .title {
+  font-size: 20px;
+  display: block;
+}
+
+.project img {
+  height: 100px;
 }

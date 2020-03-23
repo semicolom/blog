@@ -8,10 +8,11 @@ from . import views
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
-    path('{}/'.format(settings.ADMIN_URL), admin.site.urls),
-    path('services/', include('services.urls')),
+    path(f'{settings.ADMIN_URL}/', admin.site.urls),
     path('blog/', include('djtools.blog.urls')),
     path('contact/', ContactRequestView.as_view(), name='contact'),
+    path('services/', include('services.urls')),
+    path('projects/', include('projects.urls')),
 ]
 
 # On development serve media and static files using django
