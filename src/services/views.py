@@ -13,6 +13,6 @@ class ServiceDetailView(DetailView):
     def get_context_data(self, **kwargs):
         return {
             **super().get_context_data(**kwargs),
-            'projects': self.object.projects.active.all(),
+            'projects': self.object.projects.filter(is_active=True),
             'other_services': self.queryset.exclude(id=self.object.id),
         }
