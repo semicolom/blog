@@ -1,22 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}{# TODO #}{% endblock title %}
-{% block description %}{# TODO #}{% endblock description %}
+{% block title %}Python Django freelance{% if category %} {{ category.name }}{% endif %} projects{% endblock title %}
+{% block description %}Are you looking for a freelance developer to build a{% if category %} {{ category.name }}{% endif %} project with Python or Django?{% endblock description %}
 
 {% block header_img %}{% static "img/projects-bg.jpg" %}{% endblock header_img %}
 {% block h1 %}Projects{% endblock h1 %}
 
 {% block content %}
-    <div id="services" class="container">
+    <div id="projects" class="container">
+        <div class="row filters mb-5">
+            <div class="col-12 text-center">
+                <a class="filter btn btn-light {% if not category %} active{% endif %}" href="{{ SITE_URL }}{% url 'projects:list' %}" title="Python Django freelance projects">All</a>
+                {% for cat in categories %}
+                    <a class="filter btn btn-light{% if cat == category %} active{% endif %}" href="{{ SITE_URL }}{% url 'projects:category-detail' cat.slug %}" title="Python Django freelance {{ cat.name }} projects">{{ cat.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
         <div class="row">
             {% for project in project_list %}
-                <div class="col-sm-12 col-md-6 col-lg-4 mb-4 project linkbox">
+                <div class="col-12 col-md-6 col-lg-4 mb-4 project linkbox">
                     {% if project.thumbnail %}
                         <img class="img-fluid mb-2" src="{{ project.thumbnail.url }}" alt="Logo {{ project.title }}">
                     {% endif %}
                     <h2 class="title">
-                        <a href="{{ SITE_URL }}{% url 'projects:detail' project.slug %}" title="{# TODO #}">{{ project.title }}</a>
+                        <a href="{{ SITE_URL }}{% url 'projects:detail' project.slug %}" title="{{ project.title }}, a project build with Python and Django">{{ project.title }}</a>
                     </h2>
                 </div>
             {% endfor %}

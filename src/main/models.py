@@ -45,4 +45,4 @@ class OrderedModel(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
+        return super().save(*args, **kwargs)

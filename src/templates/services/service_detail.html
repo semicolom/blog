@@ -12,17 +12,31 @@
             <div class="col-12 col-md-8 mb-5">
                 {{ service.description | safe }}
             </div>
-            {% if other_services %}
-                <div class="col-12 col-md-4">
-                    <h3 class="mb-4">Other services</h3>
-                    {% for other_service in other_services %}
-                        <div class="mb-3">
-                            <i class="fa fa-{{ other_service.icon }}"></i>
-                            <a href="{% url 'services:detail' other_service.slug %}" title="{{ other_service.title }}">{{ other_service.title }}</a>
+            <div class="col-12 col-md-4">
+                <div class="row">
+                    {% if projects %}
+                        <div class="col-12 mb-5">
+                            <h3 class="mb-4">Projects</h3>
+                            {% for projects in projects %}
+                                <div class="mb-3">
+                                    <a href="{% url 'projects:detail' projects.slug %}" title="{{ project.title }}, a project build with Python and Django">{{ projects.title }}</a>
+                                </div>
+                            {% endfor %}
                         </div>
-                    {% endfor %}
+                    {% endif %}
+                    {% if other_services %}
+                        <div class="col-12">
+                            <h3 class="mb-4">Other services</h3>
+                            {% for other_service in other_services %}
+                                <div class="mb-3">
+                                    <i class="fa fa-{{ other_service.icon }}"></i>
+                                    <a href="{% url 'services:detail' other_service.slug %}" title="{{ other_service.title }}">{{ other_service.title }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
-            {% endif %}
+            </div>
         </div>
         <div class="row">
             <div class="col-offset-6 col-12 text-center mb-5">
