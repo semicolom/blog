@@ -42,7 +42,6 @@ INSTALLED_APPS = [
 
     # Third party
     'django_extensions',
-    'captcha',
     'djtools.seo',
     'djtools.socialnetworks',
     'djtools.blog',
