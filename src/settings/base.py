@@ -41,10 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     # Third party
-    'bootstrap4',
     'django_extensions',
     'captcha',
-    'djtools.contact',
     'djtools.seo',
     'djtools.socialnetworks',
     'djtools.blog',

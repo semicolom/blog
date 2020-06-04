@@ -1,5 +1,13 @@
 {% if social_networks %}
     <ul class="list-inline text-center">
+        <li class="list-inline-item">
+            <a href="mailto:toni@semicolom.com" title="Email {{ SITE_NAME }}" target="_blank" rel="nofollow">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
         {% for social_network in social_networks %}
             <li class="list-inline-item">
                 <a href="{{ social_network.get_link }}" title="{{ social_network.get_name }} {{ SITE_NAME }}" target="_blank" rel="nofollow">

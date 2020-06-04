@@ -2,15 +2,12 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-from djtools.contact.views import ContactRequestView
-
 from . import views
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path(f'{settings.ADMIN_URL}/', admin.site.urls),
     path('blog/', include('djtools.blog.urls')),
-    path('contact/', ContactRequestView.as_view(), name='contact'),
     path('services/', include('services.urls')),
     path('projects/', include('projects.urls')),
 ]
